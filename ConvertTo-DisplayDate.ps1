@@ -28,7 +28,7 @@ function ConvertTo-DisplayDate {
     param (
         [Parameter(Mandatory=$true)]
         [string]$DateString,
-        [ValidateSet('YYYY-MM-DD (ISO 8601 Standard)','MM/DD/YYYY (US)','MONTH DD, YYYY (US Long Form)','DD/MM/YYYY (International)','DD.MM.YYYY (Eastern Europe)','DD MONTH YEAR (UK Formal)','YYYY年MM月DD日 (Japan)')]
+        [ValidateSet('YYYY-MM-DD (ISO 8601 Standard)','MM/DD/YYYY (US)','MONTH DD, YYYY (US Long Form)','DD/MM/YYYY (International)','DD.MM.YYYY (Eastern Europe)','DD MONTH YEAR (UK Formal)',"YYYY MM DD (Japan)")]
         [string]$DateFormat,
         [ValidateSet('24-Hour','12-Hour')]
         [String]$TimeFormat
