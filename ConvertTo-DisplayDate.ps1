@@ -1,14 +1,3 @@
-﻿<#
-Date formats vary depending on location, culture, and context, but I'll cover the most common ones you’ll encounter globally. These typically involve arranging the day (D), month (M), and year (Y) in different sequences, sometimes with separators like slashes (/), dashes (-), or dots (.). Here’s a breakdown:
-
-1. 
-2. 
-
-
-
-#>
-
-
 # The ConvertTo-DisplayDate function is a PowerShell utility that formats a given date string into various human-readable formats. 
 # It allows users to specify the date format and the time format (24-hour or 12-hour). 
 # The function supports multiple regional date formats, making it versatile for international applications.
