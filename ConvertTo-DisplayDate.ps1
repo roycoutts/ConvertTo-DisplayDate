@@ -47,7 +47,7 @@ function ConvertTo-DisplayDate {
             'DD/MM/YYYY (International)'     { $DisplayDate = (Get-Date -Date $DateString).ToString("dd/MM/yyyy $TimeFmt") }
             'DD.MM.YYYY (Eastern Europe)'    { $DisplayDate = (Get-Date -Date $DateString).ToString("dd.MM.yyyy $TimeFmt") }
             'DD MONTH YEAR (UK Formal)'      { $DisplayDate = (Get-Date -Date $DateString).ToString("dd MMMM yyyy $TimeFmt") }
-            'YYYY年MM月DD日 (Japan)'          { 
+            'YYYY MM DD  (Japan)'            { 
                 $kanjiAM = "$([char]21320)$([char]21069)"
                 $kanjiPM = "$([char]21320)$([char]24460)"
                 $kanjiHOUR = "$([char]26178)" 
