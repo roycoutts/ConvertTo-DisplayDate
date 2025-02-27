@@ -48,11 +48,15 @@ function ConvertTo-DisplayDate {
             'DD.MM.YYYY (Eastern Europe)'    { $DisplayDate = (Get-Date -Date $DateString).ToString("dd.MM.yyyy $TimeFmt") }
             'DD MONTH YEAR (UK Formal)'      { $DisplayDate = (Get-Date -Date $DateString).ToString("dd MMMM yyyy $TimeFmt") }
             'YYYY年MM月DD日 (Japan)'          { 
+                $kanjiAM = "$([char]21320)$([char]21069)"
+                $kanjiPM = "$([char]21320)$([char]24460)"
+                $kanjiHOUR = "$([char]26178)" 
+                $kanjiMINUTE = "$([char]20998)" 
                 $baseDate = (Get-Date -Date $DateString).ToString('yyyy年MM月dd日')
                 if ($TimeFormat -eq '12-Hour') {
-                    $timePart = (Get-Date -Date $DateString).ToString('tt h時mm分') -replace 'AM', '午前' -replace 'PM', '午後'
+                    $timePart = (Get-Date -Date $DateString).ToString('tt h"HOUR"mm"MINUTE"') -replace 'AM', $kanjiAM -replace 'PM', $kanjiPM -replace 'HOUR', $kanjiHOUR -replace 'MINUTE', $kanjiMINUTE
                 } else {
-                    $timePart = (Get-Date -Date $DateString).ToString('HH時mm分')
+                    $timePart = (Get-Date -Date $DateString).ToString('HH"HOUR"mm"MINUTE"')
                 }
                 $DisplayDate = "$baseDate $timePart"
             }
